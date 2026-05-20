@@ -1,0 +1,211 @@
+/* ===== Global ===== */
+Screen {
+    background: $surface;
+}
+
+/* Main content area sits between the auto-docked Header and Footer */
+#main {
+    height: 1fr;
+    layout: vertical;
+}
+
+.field-label {
+    margin-top: 1;
+    margin-bottom: 0;
+    color: $text-muted;
+    text-style: bold;
+}
+
+.warning {
+    color: $warning;
+    margin: 0 0 1 0;
+}
+
+.error {
+    color: $error;
+    margin: 0 0 1 0;
+}
+
+.empty-msg {
+    color: $text-muted;
+    margin: 2 2;
+}
+
+.tab-hint {
+    color: $text-muted;
+    margin: 0 1 1 1;
+}
+
+/* ===== Config Screen ===== */
+#config-scroll {
+    height: 1fr;
+    padding: 1 2;
+}
+
+#database-add-row {
+    height: 3;
+    margin-top: 1;
+}
+
+#database-add-row Input {
+    width: 1fr;
+}
+
+#database-add-row Button {
+    width: 8;
+    margin-left: 1;
+}
+
+#database-list {
+    height: 4;
+    border: solid $primary-darken-2;
+    margin-top: 0;
+}
+
+#manifest-add-row {
+    height: 3;
+    margin-top: 1;
+}
+
+#manifest-add-row Input {
+    width: 1fr;
+}
+
+#manifest-add-row Button {
+    width: 8;
+    margin-left: 1;
+}
+
+#manifest-list {
+    height: 6;
+    border: solid $primary-darken-2;
+    margin-top: 0;
+}
+
+#config-footer {
+    height: auto;
+    align: right middle;
+    padding: 0 2;
+    border-top: solid $primary-darken-3;
+}
+
+#run-btn {
+    width: 20;
+}
+
+/* ===== Analysis Screen ===== */
+#main Center {
+    height: 1fr;
+}
+
+#analysis-box {
+    width: 80%;
+    height: auto;
+    min-height: 14;
+    border: solid $primary;
+    padding: 2 4;
+}
+
+#status-label {
+    width: 1fr;
+    margin-bottom: 1;
+}
+
+#analysis-box ProgressBar {
+    margin-bottom: 1;
+}
+
+#cancel-btn {
+    margin-top: 2;
+    align-horizontal: center;
+}
+
+/* ===== Results Screen ===== */
+#results-summary {
+    padding: 1 2;
+    background: $primary-darken-2;
+    color: $text;
+}
+
+#results-tabs {
+    height: 1fr;
+}
+
+SelectionList {
+    height: 1fr;
+    border: none;
+}
+
+#schema-table {
+    height: 1fr;
+}
+
+#implicit-list {
+    height: 1fr;
+}
+
+#results-footer {
+    height: auto;
+    align: center middle;
+    padding: 0 2;
+    border-top: solid $primary-darken-3;
+}
+
+#results-footer Button {
+    margin: 0 1;
+}
+
+#generate-btn {
+    width: 20;
+}
+
+/* ===== Preview Screen ===== */
+PreviewScreen {
+    align: center middle;
+}
+
+PreviewScreen > Label {
+    width: 90%;
+    padding: 0 1;
+    color: $text-muted;
+}
+
+#sql-area {
+    width: 90%;
+    height: 80%;
+    border: solid $primary;
+}
+
+#preview-footer {
+    width: 90%;
+    height: 3;
+    align: center middle;
+    margin-top: 1;
+}
+
+#preview-footer Button {
+    margin: 0 1;
+}
+
+/* ===== Save Modal ===== */
+_SaveModal {
+    align: center middle;
+}
+
+_SaveModal > Label {
+    margin-bottom: 1;
+}
+
+_SaveModal Input {
+    width: 60;
+    margin-bottom: 1;
+}
+
+_SaveModal Horizontal {
+    align: center middle;
+    height: 3;
+}
+
+_SaveModal Button {
+    margin: 0 1;
+}

@@ -1,0 +1,70 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dbt-cleaner"
+version = "0.1.0"
+description = "TUI for identifying and removing orphaned Snowflake objects not tracked in any dbt manifest"
+readme = "README.md"
+requires-python = ">=3.13"
+license = { text = "MIT" }
+authors = [{ name = "Marcin Szymanski", email = "ms32035@gmail.com" }]
+keywords = ["dbt", "snowflake", "data-engineering", "tui", "cleanup"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Database",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "textual>=8.2.7",
+    "snowflake-connector-python>=4.5.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/crugroup/dbt-cleaner"
+Repository = "https://github.com/crugroup/dbt-cleaner"
+"Bug Tracker" = "https://github.com/crugroup/dbt-cleaner/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.0.3",
+    "pytest-asyncio>=1.3.0",
+    "textual[dev]>=8.2.7",
+    "ruff>=0.15.3",
+    "mypy>=2.1.0",
+]
+
+[project.scripts]
+dbt-cleaner = "dbt_cleaner.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dbt_cleaner"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+files = ["src"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+    "pytest-asyncio>=1.3.0",
+]
